@@ -1,3 +1,12 @@
 {
-  "processed": []
+  "processed": [
+    {
+      "transcriptPath": "transcripts/2026-06-11/otter/transcript.txt",
+      "markdownOutputPath": "outputs/2026-06-11/otter/gpt-5.md",
+      "jsonOutputPath": "outputs/2026-06-11/otter/final-reviewed.json",
+      "processedAt": "2026-06-23T23:50:38.310Z",
+      "agent": "gpt",
+      "model": "gpt-5"
+    }
+  ]
 }
