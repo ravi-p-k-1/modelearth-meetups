@@ -5,6 +5,7 @@
   "type": "module",
   "scripts": {
     "build": "tsc --noEmit",
+    "dashboard:data": "tsx src/outputs/generateReviewData.ts",
     "scan": "tsx src/main.ts"
   },
   "devDependencies": {

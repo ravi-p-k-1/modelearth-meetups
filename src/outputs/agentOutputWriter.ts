@@ -71,7 +71,7 @@ Deadline:
 Meeting Reference:
 Similar Existing Issue:
 Recommended Action:
-Review Status: pending_human_review
+Review Status: pending_review
 `;
 }
 
@@ -87,7 +87,7 @@ function buildJsonTemplate(transcript: TranscriptSource, agentRun: AgentRun): st
       transcript: normalizedTranscript,
       agent: agentRun.agent,
       model: agentRun.model,
-      reviewStatus: "pending_human_review",
+      reviewStatus: "in_review",
       issues: [],
     },
     null,

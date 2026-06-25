@@ -72,7 +72,7 @@ outputs/<date>/<source>/<agent>-<model>.md
 outputs/<date>/<source>/final-reviewed.json
 ```
 
-5. Keep every proposed issue marked `pending_human_review` unless a human has reviewed it.
+5. Keep every proposed issue marked `pending_review` unless a human has reviewed it.
 
 6. Run validation:
 
@@ -81,6 +81,57 @@ npm.cmd run build
 ```
 
 For JSON output, also make sure `final-reviewed.json` parses successfully.
+
+## Dashboard Workflow
+
+The dashboard is a static review UI. It does not scan `outputs/` directly and does not write changes back to JSON files.
+
+After creating or editing any `outputs/<date>/<source>/final-reviewed.json` file, regenerate dashboard data:
+
+```powershell
+npm.cmd run dashboard:data
+```
+
+This writes:
+
+```text
+dashboard/review-ui/review-data.json
+```
+
+The static dashboard reads that generated file.
+
+Dashboard files:
+
+```text
+dashboard/review-ui/index.html
+dashboard/review-ui/app.js
+dashboard/review-ui/styles.css
+dashboard/review-ui/review-data.json
+```
+
+Because the dashboard uses browser `fetch()` to load `review-data.json`, open it through a local static server instead of `file://`.
+
+Example:
+
+```powershell
+python -m http.server 4173 --bind 127.0.0.1 --directory dashboard/review-ui
+```
+
+Then open:
+
+```text
+http://localhost:4173
+```
+
+Dashboard behavior:
+
+- `Pending Issues` shows only issues with `reviewStatus: "pending_review"`.
+- `All Issues` shows all issues.
+- The first table shows transcript dates.
+- Clicking a date shows data sources for that date.
+- Clicking a data source shows issues from that transcript/source.
+- Clicking an issue shows full issue details.
+- The dashboard is read-only. To change statuses, manually edit `final-reviewed.json` or ask an agent to update it, then rerun `npm.cmd run dashboard:data`.
 
 ## What To Extract
 
@@ -109,7 +160,7 @@ Date:
 Source:
 Agent:
 Model:
-Review Status: pending_human_review
+Review Status: in_review
 
 ## Meeting Summary
 
@@ -128,7 +179,7 @@ Deadline:
 Meeting Reference:
 Similar Existing Issue:
 Recommended Action:
-Review Status: pending_human_review
+Review Status: pending_review
 ```
 
 Use one issue section per proposed GitHub Issue.
@@ -146,7 +197,7 @@ Use one issue section per proposed GitHub Issue.
   },
   "agent": "gpt",
   "model": "gpt-5",
-  "reviewStatus": "pending_human_review",
+  "reviewStatus": "in_review",
   "issues": [
     {
       "id": "2026-06-11-otter-001",
@@ -160,7 +211,7 @@ Use one issue section per proposed GitHub Issue.
       "similarExistingIssue": null,
       "existingIssueCheckStatus": "not_checked",
       "recommendedAction": "create_new_issue",
-      "reviewStatus": "pending_human_review"
+      "reviewStatus": "pending_review"
     }
   ]
 }
@@ -174,7 +225,7 @@ Allowed `recommendedAction` values:
 
 Allowed `reviewStatus` values:
 
-- `pending_human_review`
+- `pending_review`
 - `approved`
 - `rejected`
 
@@ -250,7 +301,8 @@ modelearth-meetups/
 |   |   `-- transcripts/
 |   |       `-- transcriptSource.ts
 |   |-- outputs/
-|   |   `-- agentOutputWriter.ts
+|   |   |-- agentOutputWriter.ts
+|   |   `-- generateReviewData.ts
 |   |-- processing/
 |   |   |-- manifestManager.ts
 |   |   `-- transcriptScanner.ts
@@ -263,4 +315,8 @@ modelearth-meetups/
 |
 `-- dashboard/
     `-- review-ui/
+        |-- app.js
+        |-- index.html
+        |-- review-data.json
+        `-- styles.css
 ```

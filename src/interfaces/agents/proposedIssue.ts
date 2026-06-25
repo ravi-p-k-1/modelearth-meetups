@@ -12,7 +12,7 @@ export interface ProposedIssue {
   meetingReference: string;
   similarExistingIssue: string | null;
   recommendedAction: "create_new_issue" | "update_existing_issue" | "no_action";
-  reviewStatus: "pending_human_review" | "approved" | "rejected";
+  reviewStatus: "pending_review" | "approved" | "rejected";
 }
 
 // Complete issue extraction result for one transcript and one agent run.

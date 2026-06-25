@@ -6,7 +6,7 @@
   },
   "agent": "gpt",
   "model": "gpt-5",
-  "reviewStatus": "pending_human_review",
+  "reviewStatus": "in_review",
   "issues": [
     {
       "id": "2026-06-11-otter-001",
@@ -20,7 +20,7 @@
       "similarExistingIssue": null,
       "existingIssueCheckStatus": "not_checked",
       "recommendedAction": "create_new_issue",
-      "reviewStatus": "pending_human_review"
+      "reviewStatus": "pending_review"
     },
     {
       "id": "2026-06-11-otter-002",
@@ -34,7 +34,7 @@
       "similarExistingIssue": null,
       "existingIssueCheckStatus": "not_checked",
       "recommendedAction": "create_new_issue",
-      "reviewStatus": "pending_human_review"
+      "reviewStatus": "pending_review"
     },
     {
       "id": "2026-06-11-otter-003",
@@ -48,7 +48,7 @@
       "similarExistingIssue": null,
       "existingIssueCheckStatus": "not_checked",
       "recommendedAction": "create_new_issue",
-      "reviewStatus": "pending_human_review"
+      "reviewStatus": "pending_review"
     },
     {
       "id": "2026-06-11-otter-004",
@@ -62,7 +62,7 @@
       "similarExistingIssue": null,
       "existingIssueCheckStatus": "not_checked",
       "recommendedAction": "create_new_issue",
-      "reviewStatus": "pending_human_review"
+      "reviewStatus": "pending_review"
     },
     {
       "id": "2026-06-11-otter-005",
@@ -76,7 +76,7 @@
       "similarExistingIssue": null,
       "existingIssueCheckStatus": "not_checked",
       "recommendedAction": "create_new_issue",
-      "reviewStatus": "pending_human_review"
+      "reviewStatus": "pending_review"
     },
     {
       "id": "2026-06-11-otter-006",
@@ -90,7 +90,7 @@
       "similarExistingIssue": null,
       "existingIssueCheckStatus": "not_checked",
       "recommendedAction": "create_new_issue",
-      "reviewStatus": "pending_human_review"
+      "reviewStatus": "pending_review"
     },
     {
       "id": "2026-06-11-otter-007",
@@ -104,7 +104,7 @@
       "similarExistingIssue": null,
       "existingIssueCheckStatus": "not_checked",
       "recommendedAction": "create_new_issue",
-      "reviewStatus": "pending_human_review"
+      "reviewStatus": "pending_review"
     },
     {
       "id": "2026-06-11-otter-008",
@@ -118,7 +118,7 @@
       "similarExistingIssue": null,
       "existingIssueCheckStatus": "not_checked",
       "recommendedAction": "create_new_issue",
-      "reviewStatus": "pending_human_review"
+      "reviewStatus": "pending_review"
     }
   ]
 }

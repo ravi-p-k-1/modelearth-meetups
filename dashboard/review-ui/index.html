@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Transcript Issue Review</title>
+    <link rel="stylesheet" href="./styles.css">
+  </head>
+  <body>
+    <main class="app-shell">
+      <header class="page-header">
+        <h1>Transcript Issue Review</h1>
+        <p id="generatedAt" class="muted"></p>
+      </header>
+
+      <nav class="tabs" aria-label="Issue filters">
+        <button id="pendingTab" class="tab-button active" type="button">Pending Issues</button>
+        <button id="allTab" class="tab-button" type="button">All Issues</button>
+      </nav>
+
+      <section class="navigation-bar" aria-label="Review navigation">
+        <button id="backButton" class="secondary-button" type="button" hidden>Back</button>
+        <ol id="breadcrumb" class="breadcrumb"></ol>
+      </section>
+
+      <section id="content" class="content" aria-live="polite"></section>
+    </main>
+
+    <script src="./app.js"></script>
+  </body>
+</html>
