@@ -1,6 +1,6 @@
-import { parseCliOptions } from "./cli/args.js";
 import { createAgentOutputPlaceholders } from "./outputs/agentOutputWriter.js";
 import { isTranscriptProcessed, readManifest, writeManifest } from "./processing/manifestManager.js";
+import { parseCliOptions } from "./utils/cli/args.js";
 import { scanTranscripts } from "./processing/transcriptScanner.js";
 import { normalizePathForManifest } from "./utils/paths/normalizePath.js";
 

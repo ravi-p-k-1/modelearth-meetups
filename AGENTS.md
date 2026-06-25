@@ -13,7 +13,20 @@ Agents such as Codex, Claude, Gemini, or Copilot should read transcripts, extrac
 - If a transcript is already listed in `processed-manifest.json`, skip it even if it was processed by another agent/model.
 - To reprocess a transcript, manually remove its record from `processed-manifest.json`, then run the workflow again.
 - Do not create GitHub Issues directly. Only propose issues for human review.
-- Use `.env.example` as the template for future GitHub repo configuration.
+- Use `.env.example` as the template for future GitHub repo and project configuration.
+
+## Configuration
+
+Future GitHub issue creation should read target details from `.env`:
+
+```text
+GITHUB_OWNER=
+GITHUB_REPO=
+GITHUB_PROJECT=
+GITHUB_TOKEN=
+```
+
+`GITHUB_PROJECT` should identify the GitHub Project linked to the target repo.
 
 ## First-Time Setup
 
@@ -224,8 +237,6 @@ modelearth-meetups/
 |           `-- final-reviewed.json
 |
 |-- src/
-|   |-- cli/
-|   |   `-- args.ts
 |   |-- interfaces/
 |   |   |-- agents/
 |   |   |   |-- agentRun.ts
@@ -245,7 +256,7 @@ modelearth-meetups/
 |   |   `-- transcriptScanner.ts
 |   |-- utils/
 |   |   |-- cli/
-|   |   |   `-- parseArgs.ts
+|   |   |   `-- args.ts
 |   |   `-- paths/
 |   |       `-- normalizePath.ts
 |   `-- main.ts
