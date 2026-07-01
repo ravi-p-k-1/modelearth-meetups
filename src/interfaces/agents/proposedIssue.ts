@@ -1,4 +1,8 @@
 import type { AgentRun } from "./agentRun.js";
+import type {
+  GitHubIssueMetadata,
+  GitHubProjectMetadata,
+} from "../github/githubIssueMetadata.js";
 
 // Structured representation of a GitHub Issue proposed from a transcript.
 export interface ProposedIssue {
@@ -13,6 +17,8 @@ export interface ProposedIssue {
   similarExistingIssue: string | null;
   recommendedAction: "create_new_issue" | "update_existing_issue" | "no_action";
   reviewStatus: "pending_review" | "approved" | "rejected";
+  githubIssue?: GitHubIssueMetadata;
+  githubProject?: GitHubProjectMetadata;
 }
 
 // Complete issue extraction result for one transcript and one agent run.

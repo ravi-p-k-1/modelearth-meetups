@@ -5,7 +5,7 @@ Date: 2026-06-11
 Source: otter
 Agent: gpt
 Model: gpt-5
-Review Status: pending_review
+Review Status: review_complete
 
 ## Meeting Summary
 
@@ -45,7 +45,7 @@ Similar Existing Issue: not checked
 
 Recommended Action: create_new_issue
 
-Review Status: pending_review
+Review Status: approved
 
 ### Issue 2
 
@@ -68,7 +68,7 @@ Similar Existing Issue: not checked
 
 Recommended Action: create_new_issue
 
-Review Status: pending_review
+Review Status: approved
 
 ### Issue 3
 
@@ -91,7 +91,7 @@ Similar Existing Issue: not checked
 
 Recommended Action: create_new_issue
 
-Review Status: pending_review
+Review Status: approved
 
 ### Issue 4
 
@@ -114,7 +114,7 @@ Similar Existing Issue: not checked
 
 Recommended Action: create_new_issue
 
-Review Status: pending_review
+Review Status: rejected
 
 ### Issue 5
 
@@ -137,7 +137,7 @@ Similar Existing Issue: not checked
 
 Recommended Action: create_new_issue
 
-Review Status: pending_review
+Review Status: rejected
 
 ### Issue 6
 
@@ -160,7 +160,7 @@ Similar Existing Issue: not checked
 
 Recommended Action: create_new_issue
 
-Review Status: pending_review
+Review Status: rejected
 
 ### Issue 7
 
@@ -183,7 +183,7 @@ Similar Existing Issue: not checked
 
 Recommended Action: create_new_issue
 
-Review Status: pending_review
+Review Status: rejected
 
 ### Issue 8
 
@@ -206,4 +206,4 @@ Similar Existing Issue: not checked
 
 Recommended Action: create_new_issue
 
-Review Status: pending_review
+Review Status: approved

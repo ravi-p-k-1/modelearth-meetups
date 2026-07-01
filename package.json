@@ -6,6 +6,7 @@
   "scripts": {
     "build": "tsc --noEmit",
     "dashboard:data": "tsx src/outputs/generateReviewData.ts",
+    "github:create": "tsx src/github/createIssues.ts",
     "scan": "tsx src/main.ts"
   },
   "devDependencies": {

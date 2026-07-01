@@ -133,6 +133,42 @@ Dashboard behavior:
 - Clicking an issue shows full issue details.
 - The dashboard is read-only. To change statuses, manually edit `final-reviewed.json` or ask an agent to update it, then rerun `npm.cmd run dashboard:data`.
 
+## GitHub Issue Creation
+
+To create GitHub Issues and link them to the configured GitHub Project:
+
+```powershell
+npm.cmd run github:create
+```
+
+Creation rules:
+
+- Only files with top-level `reviewStatus: "review_complete"` are considered.
+- Only issues with `reviewStatus: "approved"` are created.
+- Issues with `reviewStatus: "rejected"` are ignored.
+- Issues with `reviewStatus: "pending_review"` are ignored.
+- Issues that already have `githubIssue` metadata are skipped to avoid duplicates.
+- Transcript assignee names are included in the GitHub issue body, but they are not sent as GitHub assignees because transcript names may not be GitHub usernames.
+- After creation, `final-reviewed.json` is updated with `githubIssue` and `githubProject` metadata.
+
+Required `.env` values:
+
+```text
+GITHUB_OWNER=
+GITHUB_REPO=
+GITHUB_PROJECT=
+GITHUB_TOKEN=
+```
+
+`GITHUB_PROJECT` must be the full project URL:
+
+```text
+https://github.com/orgs/modelearth/projects/3
+https://github.com/users/ravi-p-k-1/projects/2
+```
+
+If project linking fails with `Resource not accessible by personal access token`, the token cannot access the configured GitHub Project. For fine-grained tokens, grant organization `Projects: Read and write` access and confirm the token owner can access the org/project. If the organization requires SSO, authorize the token for that organization.
+
 ## What To Extract
 
 For each transcript, identify:
@@ -288,14 +324,28 @@ modelearth-meetups/
 |           `-- final-reviewed.json
 |
 |-- src/
+|   |-- github/
+|   |   |-- client.ts
+|   |   |-- config.ts
+|   |   |-- createIssues.ts
+|   |   |-- reviewedIssues.ts
+|   |   `-- updateReviewedIssue.ts
 |   |-- interfaces/
 |   |   |-- agents/
 |   |   |   |-- agentRun.ts
 |   |   |   `-- proposedIssue.ts
 |   |   |-- cli/
 |   |   |   `-- cliOptions.ts
+|   |   |-- dashboard/
+|   |   |   `-- reviewData.ts
+|   |   |-- github/
+|   |   |   |-- approvedIssue.ts
+|   |   |   |-- githubApi.ts
+|   |   |   |-- githubConfig.ts
+|   |   |   `-- githubIssueMetadata.ts
 |   |   |-- outputs/
-|   |   |   `-- agentOutputPaths.ts
+|   |   |   |-- agentOutputPaths.ts
+|   |   |   `-- finalReviewedJson.ts
 |   |   |-- processing/
 |   |   |   `-- processedManifest.ts
 |   |   `-- transcripts/
@@ -309,6 +359,12 @@ modelearth-meetups/
 |   |-- utils/
 |   |   |-- cli/
 |   |   |   `-- args.ts
+|   |   |-- env/
+|   |   |   `-- loadEnv.ts
+|   |   |-- github/
+|   |   |   |-- graphql.ts
+|   |   |   |-- headers.ts
+|   |   |   `-- issueBody.ts
 |   |   `-- paths/
 |   |       `-- normalizePath.ts
 |   `-- main.ts

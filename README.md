@@ -51,3 +51,31 @@ Open:
 ```text
 http://localhost:4173
 ```
+
+## Create GitHub Issues
+
+Only approved issues from review-complete files are eligible.
+
+Create issues and link them to the configured GitHub Project:
+
+```powershell
+npm.cmd run github:create
+```
+
+Required `.env` values:
+
+```text
+GITHUB_OWNER=
+GITHUB_REPO=
+GITHUB_PROJECT=
+GITHUB_TOKEN=
+```
+
+`GITHUB_PROJECT` should be the full project URL:
+
+```text
+https://github.com/orgs/modelearth/projects/3
+https://github.com/users/ravi-p-k-1/projects/2
+```
+
+If project linking fails with `Resource not accessible by personal access token`, update `GITHUB_TOKEN` so it can access the GitHub Project. For a fine-grained token, grant organization `Projects: Read and write` access, and make sure the token owner has access to the org/project.

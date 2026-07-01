@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-25T19:42:37.925Z",
+  "generatedAt": "2026-06-26T00:02:56.060Z",
   "sources": [
     {
       "date": "2026-06-11",
@@ -8,7 +8,7 @@
       "jsonPath": "outputs/2026-06-11/otter/final-reviewed.json",
       "agent": "gpt",
       "model": "gpt-5",
-      "reviewStatus": "in_review",
+      "reviewStatus": "review_complete",
       "issues": [
         {
           "id": "2026-06-11-otter-001",
@@ -27,7 +27,18 @@
           "similarExistingIssue": null,
           "existingIssueCheckStatus": "not_checked",
           "recommendedAction": "create_new_issue",
-          "reviewStatus": "pending_review"
+          "reviewStatus": "approved",
+          "githubIssue": {
+            "number": 2,
+            "url": "https://github.com/ravi-p-k-1/InsightIQ/issues/2",
+            "nodeId": "I_kwDOSzGfx88AAAABGwCC4g",
+            "createdAt": "2026-06-25T22:59:51.621Z"
+          },
+          "githubProject": {
+            "url": "https://github.com/users/ravi-p-k-1/projects/2",
+            "linked": true,
+            "linkedAt": "2026-06-25T22:59:52.070Z"
+          }
         },
         {
           "id": "2026-06-11-otter-002",
@@ -46,7 +57,18 @@
           "similarExistingIssue": null,
           "existingIssueCheckStatus": "not_checked",
           "recommendedAction": "create_new_issue",
-          "reviewStatus": "pending_review"
+          "reviewStatus": "approved",
+          "githubIssue": {
+            "number": 3,
+            "url": "https://github.com/ravi-p-k-1/InsightIQ/issues/3",
+            "nodeId": "I_kwDOSzGfx88AAAABGwCDGQ",
+            "createdAt": "2026-06-25T22:59:52.572Z"
+          },
+          "githubProject": {
+            "url": "https://github.com/users/ravi-p-k-1/projects/2",
+            "linked": true,
+            "linkedAt": "2026-06-25T22:59:52.921Z"
+          }
         },
         {
           "id": "2026-06-11-otter-003",
@@ -64,7 +86,18 @@
           "similarExistingIssue": null,
           "existingIssueCheckStatus": "not_checked",
           "recommendedAction": "create_new_issue",
-          "reviewStatus": "pending_review"
+          "reviewStatus": "approved",
+          "githubIssue": {
+            "number": 4,
+            "url": "https://github.com/ravi-p-k-1/InsightIQ/issues/4",
+            "nodeId": "I_kwDOSzGfx88AAAABGwCDRw",
+            "createdAt": "2026-06-25T22:59:53.424Z"
+          },
+          "githubProject": {
+            "url": "https://github.com/users/ravi-p-k-1/projects/2",
+            "linked": true,
+            "linkedAt": "2026-06-25T22:59:53.821Z"
+          }
         },
         {
           "id": "2026-06-11-otter-004",
@@ -84,7 +117,7 @@
           "similarExistingIssue": null,
           "existingIssueCheckStatus": "not_checked",
           "recommendedAction": "create_new_issue",
-          "reviewStatus": "pending_review"
+          "reviewStatus": "rejected"
         },
         {
           "id": "2026-06-11-otter-005",
@@ -104,7 +137,7 @@
           "similarExistingIssue": null,
           "existingIssueCheckStatus": "not_checked",
           "recommendedAction": "create_new_issue",
-          "reviewStatus": "pending_review"
+          "reviewStatus": "rejected"
         },
         {
           "id": "2026-06-11-otter-006",
@@ -124,7 +157,7 @@
           "similarExistingIssue": null,
           "existingIssueCheckStatus": "not_checked",
           "recommendedAction": "create_new_issue",
-          "reviewStatus": "pending_review"
+          "reviewStatus": "rejected"
         },
         {
           "id": "2026-06-11-otter-007",
@@ -142,7 +175,7 @@
           "similarExistingIssue": null,
           "existingIssueCheckStatus": "not_checked",
           "recommendedAction": "create_new_issue",
-          "reviewStatus": "pending_review"
+          "reviewStatus": "rejected"
         },
         {
           "id": "2026-06-11-otter-008",
@@ -161,7 +194,18 @@
           "similarExistingIssue": null,
           "existingIssueCheckStatus": "not_checked",
           "recommendedAction": "create_new_issue",
-          "reviewStatus": "pending_review"
+          "reviewStatus": "approved",
+          "githubIssue": {
+            "number": 5,
+            "url": "https://github.com/ravi-p-k-1/InsightIQ/issues/5",
+            "nodeId": "I_kwDOSzGfx88AAAABGwCDfg",
+            "createdAt": "2026-06-25T22:59:54.406Z"
+          },
+          "githubProject": {
+            "url": "https://github.com/users/ravi-p-k-1/projects/2",
+            "linked": true,
+            "linkedAt": "2026-06-25T22:59:54.700Z"
+          }
         }
       ]
     }

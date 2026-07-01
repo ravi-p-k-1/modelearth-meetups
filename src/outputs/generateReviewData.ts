@@ -5,25 +5,13 @@ import type {
   IssueReviewStatus,
   ReviewData,
   ReviewDataSource,
-  ReviewedIssue,
   TranscriptReviewStatus,
 } from "../interfaces/dashboard/reviewData.js";
+import type { RawFinalReviewedJson } from "../interfaces/outputs/finalReviewedJson.js";
 import { normalizePathForManifest } from "../utils/paths/normalizePath.js";
 
 const outputsDir = "outputs";
 const dashboardDataPath = path.join("dashboard", "review-ui", "review-data.json");
-
-interface RawFinalReviewedJson {
-  transcript: {
-    date: string;
-    source: string;
-    transcriptPath: string;
-  };
-  agent: string;
-  model: string;
-  reviewStatus?: string;
-  issues: Array<Omit<ReviewedIssue, "reviewStatus"> & { reviewStatus?: string }>;
-}
 
 const reviewSources = await collectReviewDataSources(outputsDir);
 const reviewData: ReviewData = {
